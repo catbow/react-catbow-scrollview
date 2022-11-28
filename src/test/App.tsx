@@ -12,6 +12,7 @@ function App() {
 			width: '500px',
 		},
 	};
+
 	return (
 		<div className='App'>
 			hi
