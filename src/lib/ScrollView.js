@@ -29,7 +29,7 @@ function ScrollView({ option, viewItem, }) {
     (0, react_1.useEffect)(() => {
         const option = {
             root: null,
-            rootMargin: `${scrollAreaY - top}px 0px 0px 0px`,
+            rootMargin: `${scrollAreaY}px 0px 0px 0px`,
             threshold: (0, percentageArray_1.default)(),
         };
         const observer = new IntersectionObserver(entries => {
@@ -45,6 +45,6 @@ function ScrollView({ option, viewItem, }) {
             observer.observe(observerRef.current);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-    return ((0, jsx_runtime_1.jsxs)("div", { children: [(0, jsx_runtime_1.jsxs)("div", Object.assign({ style: { position: 'sticky', height: '100%', top: `${top}px` } }, { children: [(0, jsx_runtime_1.jsx)("img", { style: Object.assign(Object.assign({}, viewPort), { position: 'absolute' }), src: imgScr, alt: 'ScrollView' }), viewItem] })), (0, jsx_runtime_1.jsx)("div", { style: { height: scrollAreaY }, ref: observerRef })] }));
+    return ((0, jsx_runtime_1.jsxs)("div", { children: [(0, jsx_runtime_1.jsxs)("div", Object.assign({ style: { position: 'sticky', height: '100%', top: `${top}px` } }, { children: [(0, jsx_runtime_1.jsx)("img", { style: viewPort, src: imgScr, alt: 'ScrollView' }), viewItem] })), (0, jsx_runtime_1.jsx)("div", { style: { height: scrollAreaY }, ref: observerRef })] }));
 }
 exports.default = ScrollView;
