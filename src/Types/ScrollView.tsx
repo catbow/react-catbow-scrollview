@@ -6,8 +6,9 @@ interface TypeScrollView {
 	startNum: number;
 	videoImageCount: number;
 	extension: string;
-	scrollAreaY: string;
+	scrollAreaY: number;
 	viewPort?: any;
+	top?: number;
 }
 
 /**
@@ -17,17 +18,10 @@ interface TypeScrollView {
  * @property {videoImageCount} number -> Total-number-of-images
  * @property {startNum} number -> Image-path-start-number,
  * @property {extension} string -> Available-with-any-image-extension,
- * @property {scrollAreaY} px -> scrollArea-only-px,
+ * @property {scrollAreaY} number -> scrollArea-only-px,
  * @property {viewPort?} imgStyle -> all-imgTag-styles-available
- * @property {viewItem?} JSXElement
- * @property Example {
- *	imgUrl: './images/004/',
- * 	extension: '.jpg', startNum: 10000,
- *  videoImageCount: 754, scrollAreaY: '50000px',
- *		viewPort: {
- *			width: '500px',
- *		},
- *	}
+ * @property {top?} number||rem -> position top
+ * @param viewItem? JSX.Element
  */
 export default function ScrollView({
 	option,
@@ -43,6 +37,7 @@ export default function ScrollView({
 		extension,
 		viewPort,
 		scrollAreaY,
+		top = 0,
 	} = option;
 	const observerRef = useRef(null);
 	const [ratio, setRatio] = useState(0);
@@ -55,7 +50,7 @@ export default function ScrollView({
 	useEffect(() => {
 		const option = {
 			root: null,
-			rootMargin: `${scrollAreaY} 0px 0px 0px`,
+			rootMargin: `${scrollAreaY}px 0px 0px 0px`,
 			threshold: percentageArray(),
 		};
 
@@ -74,7 +69,7 @@ export default function ScrollView({
 
 	return (
 		<div>
-			<div style={{ position: 'sticky', height: '100%', top: '0px' }}>
+			<div style={{ position: 'sticky', height: '100%', top: `${top}px` }}>
 				<img style={viewPort} src={imgScr} alt='ScrollView' />
 				{viewItem}
 			</div>
