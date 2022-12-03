@@ -1,6 +1,6 @@
 {
 	"name": "react-catbow-scrollview",
-	"version": "0.1.7",
+	"version": "0.1.8",
 	"module": "dist/ScrollView.js",
 	"main": "dist/ScrollView.js",
 	"description": "",

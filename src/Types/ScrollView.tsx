@@ -8,8 +8,8 @@ interface TypeScrollView {
 	extension: string;
 	scrollAreaY: string;
 	viewPort?: any;
-	viewItem?: any;
 }
+
 /**
  *
  * @param option
@@ -19,6 +19,7 @@ interface TypeScrollView {
  * @property {extension} string -> Available-with-any-image-extension,
  * @property {scrollAreaY} px -> scrollArea-only-px,
  * @property {viewPort?} imgStyle -> all-imgTag-styles-available
+ * @property {viewItem?} JSXElement
  * @property Example {
  *	imgUrl: './images/004/',
  * 	extension: '.jpg', startNum: 10000,
@@ -28,14 +29,19 @@ interface TypeScrollView {
  *		},
  *	}
  */
-export default function ScrollView({ option }: { option: TypeScrollView }) {
+export default function ScrollView({
+	option,
+	viewItem,
+}: {
+	option: TypeScrollView;
+	viewItem?: JSX.Element;
+}) {
 	const {
 		videoImageCount,
 		imgUrl,
 		startNum,
 		extension,
 		viewPort,
-		viewItem,
 		scrollAreaY,
 	} = option;
 	const observerRef = useRef(null);
