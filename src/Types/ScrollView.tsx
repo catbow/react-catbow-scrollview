@@ -2,15 +2,34 @@ import React, { useEffect, useRef, useState } from 'react';
 import percentageArray from './percentageArray';
 
 interface TypeScrollView {
-	videoImageCount: number;
 	imgUrl: string;
 	startNum: number;
+	videoImageCount: number;
 	extension: string;
-	scrollAreaY: string;
+	scrollAreaY: number;
 	viewPort?: any;
+	top?: number;
 }
 
-export default function ScrollView({ option }: { option: TypeScrollView }) {
+/**
+ *
+ * @param option
+ * @property {imgUrl} string -> Address before image
+ * @property {videoImageCount} number -> Total-number-of-images
+ * @property {startNum} number -> Image-path-start-number,
+ * @property {extension} string -> Available-with-any-image-extension,
+ * @property {scrollAreaY} number -> scrollArea-only-px,
+ * @property {viewPort?} imgStyle -> all-imgTag-styles-available
+ * @property {top?} number||rem -> position top
+ * @param viewItem? JSX.Element
+ */
+export default function ScrollView({
+	option,
+	viewItem,
+}: {
+	option: TypeScrollView;
+	viewItem?: JSX.Element;
+}) {
 	const {
 		videoImageCount,
 		imgUrl,
@@ -18,6 +37,7 @@ export default function ScrollView({ option }: { option: TypeScrollView }) {
 		extension,
 		viewPort,
 		scrollAreaY,
+		top = 0,
 	} = option;
 	const observerRef = useRef(null);
 	const [ratio, setRatio] = useState(0);
@@ -30,7 +50,7 @@ export default function ScrollView({ option }: { option: TypeScrollView }) {
 	useEffect(() => {
 		const option = {
 			root: null,
-			rootMargin: `${scrollAreaY} 0px 0px 0px`,
+			rootMargin: `${scrollAreaY}px 0px 0px 0px`,
 			threshold: percentageArray(),
 		};
 
@@ -49,8 +69,9 @@ export default function ScrollView({ option }: { option: TypeScrollView }) {
 
 	return (
 		<div>
-			<div style={{ position: 'sticky', height: '100%', top: '0px' }}>
+			<div style={{ position: 'sticky', height: '100%', top: `${top}px` }}>
 				<img style={viewPort} src={imgScr} alt='ScrollView' />
+				{viewItem}
 			</div>
 			<div style={{ height: scrollAreaY }} ref={observerRef}></div>
 		</div>

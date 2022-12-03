@@ -10,25 +10,31 @@
 
 ```javascript
 const option = {
-	imgUrl: './images/004/', // 이미지 앞 주소
-	extension: '.JPG', // 이미지 확장자
-	startNum: 10000, // 이미지 시작 넘버
-	videoImageCount: 754, // 이미지 개수
-	scrollAreaY: '50000px', // 스크롤 공간 확보
+	imgUrl: './images/004/', //  Address before image
+	videoImageCount: 754, // Total-number-of-images
+	startNum: 10000, // Image-path-start-number
+	extension: '.JPG', // Available-with-any-image-extension
+	scrollAreaY: '50000px', // scrollArea-only-px
 	viewPort: {
-		// img style
+		// all-imgTag-styles-available
 		width: '500px',
 	},
 };
+// use
+<ScollView option={option} viewItem={<Components />} />;
 ```
 
-| option          | discription      | type   |
-| --------------- | ---------------- | ------ |
-| imgUrl          | path경로         | String |
-| extension       | 이미지 확장자    | String |
-| startNum        | 이미지 시작 넘버 | Number |
-| videoImageCount | 이미지 개수      | String |
-| scrollAreaY     | 스크롤 공간 확보 | String |
-| viewPort        | img-style        | Object |
+### ❉❉ The image address path must have consecutive numbers.
 
-%% 이미지 주소 url은 연속된 번호를 가지고 있어야 사용할수 있습니다
+| option          | discription                                   | type           |
+| --------------- | --------------------------------------------- | -------------- |
+| imgUrl          | Address before image                          | String         |
+| videoImageCount | Total-number-of-images                        | String         |
+| startNum        | Image-path-start-number                       | Number         |
+| extension       | Available-with-any-image-extension            | String         |
+| scrollAreaY     | scrollArea-only-px                            | String         |
+| viewPort        | img-style                                     | Object         |
+| viewItem        | Jsx components can be rendered in ScrollVIew. | JSX Components |
+
+<br/>
+#### [Catbow Docs](https://catbow.github.io/catbow-docs/)
