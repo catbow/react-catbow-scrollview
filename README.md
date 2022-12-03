@@ -20,18 +20,21 @@ const option = {
 		width: '500px',
 	},
 };
+// use
+<ScollView option={option} viewItem={<Components />} />;
 ```
 
 ### ❉❉ The image address path must have consecutive numbers.
 
-| option          | discription                        | type   |
-| --------------- | ---------------------------------- | ------ |
-| imgUrl          | Address before image               | String |
-| videoImageCount | Total-number-of-images             | String |
-| startNum        | Image-path-start-number            | Number |
-| extension       | Available-with-any-image-extension | String |
-| scrollAreaY     | scrollArea-only-px                 | String |
-| viewPort        | img-style                          | Object |
+| option          | discription                                   | type           |
+| --------------- | --------------------------------------------- | -------------- |
+| imgUrl          | Address before image                          | String         |
+| videoImageCount | Total-number-of-images                        | String         |
+| startNum        | Image-path-start-number                       | Number         |
+| extension       | Available-with-any-image-extension            | String         |
+| scrollAreaY     | scrollArea-only-px                            | String         |
+| viewPort        | img-style                                     | Object         |
+| viewItem        | Jsx components can be rendered in ScrollVIew. | JSX Components |
 
 <br/>
 #### [Catbow Docs](https://catbow.github.io/catbow-docs/)
