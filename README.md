@@ -32,3 +32,6 @@ const option = {
 | extension       | Available-with-any-image-extension | String |
 | scrollAreaY     | scrollArea-only-px                 | String |
 | viewPort        | img-style                          | Object |
+
+<br/>
+#### [Catbow Docs](https://catbow.github.io/catbow-docs/)

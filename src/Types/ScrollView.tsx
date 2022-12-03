@@ -8,6 +8,7 @@ interface TypeScrollView {
 	extension: string;
 	scrollAreaY: string;
 	viewPort?: any;
+	viewItem?: any;
 }
 /**
  *
@@ -34,6 +35,7 @@ export default function ScrollView({ option }: { option: TypeScrollView }) {
 		startNum,
 		extension,
 		viewPort,
+		viewItem,
 		scrollAreaY,
 	} = option;
 	const observerRef = useRef(null);
@@ -68,6 +70,7 @@ export default function ScrollView({ option }: { option: TypeScrollView }) {
 		<div>
 			<div style={{ position: 'sticky', height: '100%', top: '0px' }}>
 				<img style={viewPort} src={imgScr} alt='ScrollView' />
+				{viewItem}
 			</div>
 			<div style={{ height: scrollAreaY }} ref={observerRef}></div>
 		</div>
