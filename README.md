@@ -14,7 +14,8 @@ const option = {
 	videoImageCount: 754, // Total-number-of-images
 	startNum: 10000, // Image-path-start-number
 	extension: '.JPG', // Available-with-any-image-extension
-	scrollAreaY: '50000px', // scrollArea-only-px
+	scrollAreaY: '50000px', // scrollArea,
+	top: 20 // top: 20px
 	viewPort: {
 		// all-imgTag-styles-available
 		width: '500px',
@@ -32,9 +33,11 @@ const option = {
 | videoImageCount | Total-number-of-images                        | String         |
 | startNum        | Image-path-start-number                       | Number         |
 | extension       | Available-with-any-image-extension            | String         |
-| scrollAreaY     | scrollArea-only-px                            | String         |
+| scrollAreaY     | scrollArea                                    | Number         |
 | viewPort        | img-style                                     | Object         |
+| top             | css style top                                 | Number         |
 | viewItem        | Jsx components can be rendered in ScrollVIew. | JSX Components |
 
 <br/>
+
 #### [Catbow Docs](https://catbow.github.io/catbow-docs/)
