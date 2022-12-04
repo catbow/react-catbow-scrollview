@@ -48,15 +48,14 @@ const option = {
 | top?            | css style top                                | Number         |
 | viewItem?       | Jsx components can be rendered in ScrollVIew | JSX Components |
 
-### How to use viewItem option
+## How to use <span style='color:red;'>viewItem</span> option
 
 #### you can try Components styling,
 
-#### You must use css 'position absolute' at the top of Components
+#### You must use css <sapn style='color:blue;'>'position: absolute'</sapn> at the top of Components
 
 ```javascript
-// this is components
-export default function Hello() {
+function Hello() {
 	return (
 		<div style={{ top: '10px', position: 'absolute' }}>
 			<h1 style={{ fontSize: '5rem' }}>hello world</h1>
@@ -66,7 +65,7 @@ export default function Hello() {
 		</div>
 	);
 }
-//
+
 function App() {
 	const option = {
 		videoImageCount: 754,
@@ -82,7 +81,7 @@ function App() {
 			borderRadius: '9999px',
 		},
 	};
-	return <ScrollView option={option} viewItem={<Btton />} />;
+	return <ScrollView option={option} viewItem={<Hello />} />;
 }
 ```
 
