@@ -1,5 +1,7 @@
 # React-catbow-scrollview
 
+#### ScrollView is using [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+
 #### [npm](https://www.npmjs.com/package/react-catbow-scrollview)
 
 ```javascript
@@ -28,6 +30,10 @@ const option = {
 ```
 
 #### ❉❉ The image address path must have consecutive numbers.
+
+#### ❉❉ If you host an image with S3, you can receive it with consecutive numbers.
+
+#### ❉❉ Or, you just need to have an image inside the project.
 
 <br/>
 
@@ -80,9 +86,9 @@ function App() {
 }
 ```
 
-<img src='src/gif/scrollView.gif' style='height:200px; border: 1px solid black; padding:10px'/>
+<img src='https://i.ibb.co/vZV4zxT/scroll-View.gif' style='height:200px; border: 1px solid black; padding:10px'/>
 
-[Test Img Zip](https://drive.google.com/file/d/1i-CypIWeH-LSh3XjOvFtBMfgiIgxtzfn/view?usp=share_link)
+[Test Img Zip](https://www.icloud.com/iclouddrive/0632q_553w-ITb-4_xEdpXqig#004)
 
 <br/>
 
