@@ -92,3 +92,7 @@ function App() {
 <br/>
 
 #### [Catbow Docs](https://catbow.github.io/catbow-docs/)
+
+#### [Issues can be requested using labels.](https://github.com/catbow/react-catbow-scrollview/issues)
+
+#### ex) bug, documentation, duplicate, enhancement, help wanted, invalid, question, wontfix
