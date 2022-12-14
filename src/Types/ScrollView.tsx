@@ -64,9 +64,7 @@ export default function ScrollView({
 		}, option);
 
 		if (observerRef.current) observer.observe(observerRef.current);
-
-		return () => observer.disconnect();
-	}, [ratio, scrollAreaY]);
+	}, []);
 
 	return (
 		<div>
