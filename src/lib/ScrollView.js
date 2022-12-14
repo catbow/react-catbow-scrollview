@@ -44,7 +44,7 @@ function ScrollView({ option, viewItem, }) {
         if (observerRef.current)
             observer.observe(observerRef.current);
         return () => observer.disconnect();
-    }, [ratio]);
+    }, [ratio, scrollAreaY]);
     return ((0, jsx_runtime_1.jsxs)("div", { children: [(0, jsx_runtime_1.jsxs)("div", Object.assign({ style: { position: 'sticky', height: '100%', top: `${top}px` } }, { children: [(0, jsx_runtime_1.jsx)("img", { style: viewPort, src: imgScr, alt: 'ScrollView' }), viewItem] })), (0, jsx_runtime_1.jsx)("div", { style: { height: scrollAreaY }, ref: observerRef })] }));
 }
 exports.default = ScrollView;
