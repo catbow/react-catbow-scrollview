@@ -64,6 +64,7 @@ export default function ScrollView({
 		}, option);
 
 		if (observerRef.current) observer.observe(observerRef.current);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
