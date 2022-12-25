@@ -1,6 +1,6 @@
 {
 	"name": "react-catbow-scrollview",
-	"version": "1.1.4",
+	"version": "1.1.5",
 	"module": "dist/ScrollView.js",
 	"main": "dist/ScrollView.js",
 	"description": "",
@@ -10,7 +10,8 @@
 	"keyword": [
 		"catbow"
 	],
-	"homepage": "",
+	"repository": "https://github.com/catbow/react-catbow-scrollview.git",
+	"homepage": "https://catbow.github.io/catbow-docs",
 	"bugs": {
 		"url": "https://github.com/catbow/react-catbow-scrollview/issues",
 		"email": "jh241093@gmail.com"
