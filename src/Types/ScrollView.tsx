@@ -9,12 +9,11 @@ export interface TypeScrollView {
 	scrollAreaY: number;
 	viewPort?: React.CSSProperties;
 	top?: number;
-	setEjectRatio?: React.Dispatch<React.SetStateAction<number>>;
 }
 
 /**
  *
- * @param option
+ * @props option
  * @property {imgUrl} string -> Address before image
  * @property {videoImageCount} number -> Total-number-of-images
  * @property {startNum} number -> Image-path-start-number,
@@ -22,14 +21,17 @@ export interface TypeScrollView {
  * @property {scrollAreaY} number -> scrollArea-only-px,
  * @property {viewPort?} imgStyle -> all-imgTag-styles-available
  * @property {top?} number||rem -> position top
- * @param viewItem? JSX.Element
+ * @props viewItem? JSX.Element
+ * @props setEjectRatio? SetState
  */
 export default function ScrollView({
 	option,
 	viewItem,
+	setEjectRatio,
 }: {
 	option: TypeScrollView;
 	viewItem?: JSX.Element;
+	setEjectRatio?: React.Dispatch<React.SetStateAction<number>>;
 }) {
 	const {
 		videoImageCount,
@@ -39,7 +41,6 @@ export default function ScrollView({
 		viewPort,
 		scrollAreaY,
 		top = 0,
-		setEjectRatio,
 	} = option;
 	const observerRef = useRef(null);
 	const [ratio, setRatio] = useState(0);

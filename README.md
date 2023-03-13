@@ -24,9 +24,11 @@ const option = {
 	},
 };
 // Render
-<ScollView option={option} viewItem={<Components />} />;
+<ScollView option={option} viewItem={<Components />} setEjectRatio={setEjectRatio}/>;
 // viewItem is optional
 // you can render Components in ScollView
+// setEjectRatio is optional
+// yuo can get ImageCount ratio
 ```
 
 #### ❉❉ The image address path must have consecutive numbers.
@@ -37,16 +39,17 @@ const option = {
 
 <br/>
 
-| option          | discription                                  | type           |
-| --------------- | -------------------------------------------- | -------------- |
-| imgUrl          | Address before image                         | String         |
-| videoImageCount | Total-number-of-images                       | String         |
-| startNum        | Image-path-start-number                      | Number         |
-| extension       | Available-with-any-image-extension           | String         |
-| scrollAreaY     | scrollArea                                   | Number         |
-| viewPort?       | img-style                                    | Object         |
-| top?            | css style top                                | Number         |
-| viewItem?       | Jsx components can be rendered in ScrollVIew | JSX Components |
+| option          | discription                                                                     | type               |
+| --------------- | ------------------------------------------------------------------------------- | ------------------ |
+| imgUrl          | Address before image                                                            | String             |
+| videoImageCount | Total-number-of-images                                                          | String             |
+| startNum        | Image-path-start-number                                                         | Number             |
+| extension       | Available-with-any-image-extension                                              | String             |
+| scrollAreaY     | scrollArea                                                                      | Number             |
+| viewPort?       | img-style                                                                       | Object             |
+| top?            | css style top                                                                   | Number             |
+| viewItem?       | Jsx components can be rendered in ScrollVIew                                    | JSX Components     |
+| setEjectRatio?  | you can hooks From the parent component and get ImageCount Ratio(return number) | setState => number |
 
 ## How to use <span style='color:red;'>viewItem</span> option
 
@@ -81,7 +84,12 @@ function App() {
 			borderRadius: '9999px',
 		},
 	};
-	return <ScrollView option={option} viewItem={<Hello />} />;
+	return (
+		<ScrollView
+			option={option}
+			viewItem={<Hello />}
+		/>
+	);
 }
 ```
 

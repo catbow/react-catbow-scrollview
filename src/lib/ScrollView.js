@@ -8,7 +8,7 @@ const react_1 = require("react");
 const percentageArray_1 = __importDefault(require("./percentageArray"));
 /**
  *
- * @param option
+ * @props option
  * @property {imgUrl} string -> Address before image
  * @property {videoImageCount} number -> Total-number-of-images
  * @property {startNum} number -> Image-path-start-number,
@@ -16,9 +16,10 @@ const percentageArray_1 = __importDefault(require("./percentageArray"));
  * @property {scrollAreaY} number -> scrollArea-only-px,
  * @property {viewPort?} imgStyle -> all-imgTag-styles-available
  * @property {top?} number||rem -> position top
- * @param viewItem? JSX.Element
+ * @props viewItem? JSX.Element
+ * @props setEjectRatio? SetState
  */
-function ScrollView({ option, viewItem, }) {
+function ScrollView({ option, viewItem, setEjectRatio, }) {
     const { videoImageCount, imgUrl, startNum, extension, viewPort, scrollAreaY, top = 0, } = option;
     const observerRef = (0, react_1.useRef)(null);
     const [ratio, setRatio] = (0, react_1.useState)(0);
@@ -38,6 +39,8 @@ function ScrollView({ option, viewItem, }) {
                     return;
                 if (entry.isIntersecting) {
                     setRatio(Math.round(entry.intersectionRatio * 100));
+                    setEjectRatio &&
+                        setEjectRatio(Math.round(entry.intersectionRatio * 100));
                 }
             });
         }, option);
