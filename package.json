@@ -1,6 +1,6 @@
 {
 	"name": "react-catbow-scrollview",
-	"version": "1.2.0",
+	"version": "1.2.2",
 	"module": "dist/ScrollView.js",
 	"main": "dist/ScrollView.js",
 	"description": "",
@@ -46,7 +46,7 @@
 		"start": "react-scripts start",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"publish:npm": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files",
+		"publish": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files && npm publish",
 		"build": "rm -rf src/lib && mkdir src/lib && tsc && rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files",
 		"prepublish": "npm run build"
 	},
