@@ -1,19 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react';
 import percentageArray from './percentageArray';
 
-interface TypeScrollView {
+export interface TypeScrollView {
 	imgUrl: string;
 	startNum: number;
 	videoImageCount: number;
 	extension: string;
 	scrollAreaY: number;
-	viewPort?: any;
+	viewPort?: React.CSSProperties;
 	top?: number;
 }
 
 /**
  *
- * @param option
+ * @props option
  * @property {imgUrl} string -> Address before image
  * @property {videoImageCount} number -> Total-number-of-images
  * @property {startNum} number -> Image-path-start-number,
@@ -21,14 +21,17 @@ interface TypeScrollView {
  * @property {scrollAreaY} number -> scrollArea-only-px,
  * @property {viewPort?} imgStyle -> all-imgTag-styles-available
  * @property {top?} number||rem -> position top
- * @param viewItem? JSX.Element
+ * @props viewItem? JSX.Element
+ * @props setEjectRatio? SetState
  */
 export default function ScrollView({
 	option,
 	viewItem,
+	setEjectRatio,
 }: {
 	option: TypeScrollView;
 	viewItem?: JSX.Element;
+	setEjectRatio?: React.Dispatch<React.SetStateAction<number>>;
 }) {
 	const {
 		videoImageCount,
@@ -59,6 +62,8 @@ export default function ScrollView({
 				if (ratio === 100) return;
 				if (entry.isIntersecting) {
 					setRatio(Math.round(entry.intersectionRatio * 100));
+					setEjectRatio &&
+						setEjectRatio(Math.round(entry.intersectionRatio * 100));
 				}
 			});
 		}, option);
@@ -70,10 +75,16 @@ export default function ScrollView({
 	return (
 		<div>
 			<div style={{ position: 'sticky', height: '100%', top: `${top}px` }}>
-				<img style={viewPort} src={imgScr} alt='ScrollView' />
+				<img
+					style={viewPort}
+					src={imgScr}
+					alt='ScrollView'
+				/>
 				{viewItem}
 			</div>
-			<div style={{ height: scrollAreaY }} ref={observerRef}></div>
+			<div
+				style={{ height: scrollAreaY }}
+				ref={observerRef}></div>
 		</div>
 	);
 }

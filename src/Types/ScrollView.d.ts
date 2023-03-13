@@ -12,4 +12,4 @@ export default function ScrollView({
 }: {
 	option: TypeScrollView;
 }): JSX.Element;
-export {};
+export { TypeScrollView };
